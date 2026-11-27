@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог товаров</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Учебный интернет-магазин">
+  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
+  <meta property="og:image" content="https://demetro0.github.io/kr1-html-css-shop/images/preview.jpg">
+
+</head>
+<body>
+   <header class="header">
+    <div class="site-header">
+      <a class="site-logo" href="index.html">
+        <span class="site-logo__mark" aria-hidden="true">SP</span>
+        <span>ShopProject<small>Магазин учебников</small></span>
+      </a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li><a href="index.html" aria-current="page">Главная</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="index.html#advantages">Преимущества</a></li>
+          <li><a href="index.html#popular">Популярные товары</a></li>
+          <li><a href="contacts.html#feedback">Обратная связь</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <main>
+    <section class="hero">
+        <h1>Учебный интернет-магазин</h1>
+        <p>
+            Это стартовая страница учебного frontend-проекта.
+            В дальнейшем на её основе будет разработан многостраничный сайт
+            интернет-магазина или каталога услуг.
+        </p>
+        <a class="button" href="#popular">Перейти к товарам</a>
+    </section>
+
+  <section class="section" id="popular">
+    <h2>Популярные товары</h2>
+
+    <div class="products-grid">
+      <article class="product-card">
+        <img class="product-card__image" src="images/product-1.png" alt="Обложка учебника химии, 8 класс">
+        <h3>Химия — 8 класс</h3>
+        <p>Учебник для знакомства с основами химии, строением веществ и химическими реакциями.</p>
+        <p>Цена: 1000 руб.</p>
+        <button class="button product-card__button" type="button" data-product="Химия — 8 класс">
+          Заказать
+        </button>
+      </article>
+
+      <article class="product-card">
+        <img class="product-card__image" src="images/product-2.png" alt="Обложка учебника химии, 9 класс">
+        <h3>Химия — 9 класс</h3>
+        <p>Учебник по неорганической химии: свойства элементов и их соединений, реакции и практические задания.</p>
+        <p>Цена: 1500 руб.</p>
+        <button class="button product-card__button" type="button" data-product="Химия — 9 класс">
+          Заказать
+        </button>
+      </article>
+
+      <article class="product-card">
+        <img class="product-card__image" src="images/product-3.png" alt="Обложка учебника химии, 10 класс">
+        <h3>Химия — 10 класс</h3>
+        <p>Учебник по органической химии базового уровня: строение, свойства и применение органических веществ.</p>
+        <p>Цена: 2000 руб.</p>
+        <button class="button product-card__button" type="button" data-product="Химия — 10 класс">
+          Заказать
+        </button>
+      </article>
+    </div>
+  </section>
+
+    <section class="section" id="advantages">
+      <h2>Преимущества</h2>
+      <p>Учебники для 8–10 классов, удобный каталог и простое оформление заявки.</p>
+    </section>
+
+    <aside class="aside-info">
+        <h2>Информация для студентов</h2>
+        <p>
+            На следующих практических занятиях этот проект будет расширяться:
+            появятся формы, модальное окно, дополнительные страницы, Flex/Grid,
+            БЭМ-структура и адаптивная версия сайта.
+        </p>
+    </aside>
+
+
+
+
+  </main>
+
+ <footer id="contacts">
+    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+</footer>
+<dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+  <h2 id="order-dialog-title">Оформление заявки</h2>
+
+  <form class="order-form" id="order-form" action="#" method="post" novalidate>
+    <input id="selected-product" name="selected-product" type="hidden">
+
+    <div class="form-field">
+      <label for="order-name">Имя</label>
+      <input
+        id="order-name"
+        name="name"
+        type="text"
+        placeholder="Введите ваше имя"
+        minlength="2"
+        autocomplete="given-name"
+        required
+      >
+    </div>
+
+    <div class="form-field">
+      <label for="order-email">E-mail</label>
+      <input
+        id="order-email"
+        name="email"
+        type="email"
+        placeholder="example@mail.ru"
+        autocomplete="email"
+        required
+      >
+    </div>
+
+    <div class="form-field">
+      <label for="order-phone">Телефон</label>
+      <input
+        id="order-phone"
+        name="phone"
+        type="tel"
+        inputmode="tel"
+        placeholder="+7 (900) 000-00-00"
+        pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+        required
+      >
+      <small>Формат: +7 (900) 000-00-00</small>
+    </div>
+
+    <div class="form-field">
+      <label for="order-date">Дата связи</label>
+      <input
+        id="order-date"
+        name="date"
+        type="date"
+      >
+    </div>
+
+    <div class="form-field">
+      <label for="order-topic">Тема заявки</label>
+      <select id="order-topic" name="topic" required>
+        <option value="">Выберите тему</option>
+        <option value="product">Заказ товара</option>
+        <option value="consultation">Консультация</option>
+        <option value="delivery">Доставка</option>
+      </select>
+    </div>
+
+    <div class="form-field">
+      <label for="order-comment">Комментарий</label>
+      <textarea
+        id="order-comment"
+        name="comment"
+        rows="4"
+        placeholder="Укажите дополнительную информацию"
+      ></textarea>
+    </div>
+
+    <div class="form-field form-field--checkbox">
+      <label>
+        <input
+          id="order-agreement"
+          name="agreement"
+          type="checkbox"
+          required
+        >
+        Я согласен на обработку данных
+      </label>
+    </div>
+
+    <div class="form-actions">
+      <button type="button" id="close-order-dialog">Закрыть</button>
+      <button type="submit">Отправить заявку</button>
+    </div>
+  </form>
+</dialog>
+
+<p class="success-message" id="success-message" hidden>
+  Форма успешно отправлена!
+</p>
+
+</body>
+</html>
